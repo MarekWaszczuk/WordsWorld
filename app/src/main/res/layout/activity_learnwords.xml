@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LearnWordsActivity">
+
+    <!-- **** TopToolbar (could also include it from another xml **** -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/CustomMenuBarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="onClick"
+            android:background="@drawable/iconfinder_back_alt_134226" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- **** BottomToolbar (could also include it from another xml **** -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottomToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorAccent"
+        android:theme="@style/CustomMenuBarStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/showMeaningButton"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:translationX="-20dp"
+            android:onClick="onClick"
+            android:drawableStart="@drawable/ic_action_name"
+            android:drawablePadding="-10dp"
+            android:drawableTint="@color/meaningTextColor"
+            android:text="@string/show_meaning_button"
+            android:textColor="@color/meaningTextColor"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <ImageButton
+            android:id="@+id/addToFavouritesButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/iconfinder_119_111093"
+            android:backgroundTint="@color/meaningTextColor"
+            android:onClick="onClick"
+            android:translationX="130dp" />
+
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/previousWordButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="12dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:translationX="140dp"
+            android:onClick="onClick"
+            android:background="@drawable/iconfinder_ic_keyboard_arrow_left_48px_352467"
+            android:backgroundTint="@color/meaningTextColor"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextWordButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="12dp"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:onClick="onClick"
+            android:translationX="140dp"
+            android:background="@drawable/iconfinder_ic_keyboard_arrow_right_48px_352468"
+            android:backgroundTint="@color/meaningTextColor"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <TextView
+        android:id="@+id/englishWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomToolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+
+    <TextView
+        android:id="@+id/theMeaning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="80dp"
+        android:gravity="center"
+        android:textColor="@color/meaningTextColor"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomToolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/wordsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/meaningTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topToolBar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

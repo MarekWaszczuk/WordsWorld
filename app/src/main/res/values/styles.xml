@@ -1,0 +1,25 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="CustomMenuBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="background">@color/colorPrimary</item>
+
+
+
+
+</style>
+
+    <style name="DialogNoTitleStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="background">@color/colorAccent</item>
+    </style>
+</resources>

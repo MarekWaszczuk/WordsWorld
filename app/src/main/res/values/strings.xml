@@ -1,0 +1,9 @@
+<resources>
+    <string name="next_word_button">Next Word</string>
+    <string name="show_meaning_button">Show meaning</string>
+    <string name="app_name">WordWorld</string>
+    <string name="main_menu_button_start">Learn words</string>
+    <string name="main_menu_button_games">Play a game</string>
+    <string name="search_hint">Search for a word</string>
+    <string name="languagePreference">Language</string>
+</resources>

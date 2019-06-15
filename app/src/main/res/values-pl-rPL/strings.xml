@@ -1,0 +1,9 @@
+<resources>
+    <string name="next_word_button">Następne słowo</string>
+    <string name="show_meaning_button">Pokaż znaczenie</string>
+    <string name="app_name">WordsWorld</string>
+    <string name="main_menu_button_start">Ucz się słówek</string>
+    <string name="main_menu_button_games">Zagraj w grę</string>
+    <string name="search_hint">Wyszukaj słowa</string>
+    <string name="languagePreference">Język</string>
+</resources>
