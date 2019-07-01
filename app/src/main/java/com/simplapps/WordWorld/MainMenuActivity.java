@@ -67,6 +67,7 @@ public class MainMenuActivity extends AppCompatActivity {
         setSupportActionBar(menuBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);             // TITLE DISABLED
         fragmentContainer = findViewById(R.id.fragment_container);
+        showHomeLayout();
     }
 
     /*  ------------------*****       UI METHODS       *****-------------------         */
