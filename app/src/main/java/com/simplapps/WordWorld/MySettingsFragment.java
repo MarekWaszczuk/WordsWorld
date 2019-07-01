@@ -12,17 +12,29 @@ import java.util.Locale;
 
 public class MySettingsFragment extends PreferenceFragmentCompat {
 
-    ListPreference language;
-    Configuration mainConfig;
-    SwitchPreferenceCompat alphabetical;
+    private ListPreference language;
+    private Configuration mainConfig;
+    private SwitchPreferenceCompat alphabetical;
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.settings);
-
+    public void onStart() {
+        super.onStart();
         language = findPreference("language");
         alphabetical = findPreference("alphabeticalOrder");
         mainConfig = new Configuration(getResources().getConfiguration());
+        setCustomSummaries();
+        setPreferenceChangeListeners();
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.settings);                              // list of setting to display in a layout
+
+    }
+
+    /*  ------------------*****       UI METHODS       *****-------------------         */
+
+    public void setCustomSummaries() {
         language.setSummaryProvider(new Preference.SummaryProvider() {
             @Override
             public CharSequence provideSummary(Preference preference) {
@@ -39,7 +51,15 @@ public class MySettingsFragment extends PreferenceFragmentCompat {
                 return summary;
             }
         });
+    }
 
+    public void refreshPreferencesUI() {
+        language.setTitle(getResources().getString(R.string.languagePreference));
+    }
+
+    /*  ------------------*****       FUNCTIONALITY METHODS       *****-------------------         */
+
+    public void setPreferenceChangeListeners() {
         language.setOnPreferenceChangeListener((preference, newValue) -> {
             String languageToLoad = (String) newValue;
             Locale locale = new Locale(languageToLoad);
@@ -49,11 +69,6 @@ public class MySettingsFragment extends PreferenceFragmentCompat {
             refreshPreferencesUI();
             return true;
         });
-
-    }
-
-    public void refreshPreferencesUI() {
-        language.setTitle(getResources().getString(R.string.languagePreference));
     }
 
 

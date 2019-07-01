@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:translationX="-20dp"
             android:onClick="onClick"
-            android:drawableStart="@drawable/ic_action_name"
+            android:drawableStart="@drawable/ic_question_mark"
             android:drawablePadding="-10dp"
             android:drawableTint="@color/meaningTextColor"
             android:text="@string/show_meaning_button"

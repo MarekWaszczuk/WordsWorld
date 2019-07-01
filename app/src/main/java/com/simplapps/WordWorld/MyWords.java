@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class MyWords {
 
     private HashMap<Integer, Word> words;
-    AssetManager assetManager;
+    private AssetManager assetManager;
 
     public MyWords(AssetManager asset) {
         words = new HashMap<>();
@@ -24,7 +24,9 @@ public class MyWords {
 
     }
 
-    public void loadList() throws IOException {
+    /*     LOADING THE WORDS FROM TXT FILE     */
+
+    private void loadList() throws IOException {
         InputStream is = assetManager.open("myList.txt");
         try(BufferedReader locfile = new BufferedReader(new InputStreamReader(is))) {
             String input;
@@ -35,8 +37,6 @@ public class MyWords {
                 words.put(i, new Word(engWord, engDescription));
                 i++;
             }
-        } catch(IOException io) {
-            io.printStackTrace();
         }
     }
 

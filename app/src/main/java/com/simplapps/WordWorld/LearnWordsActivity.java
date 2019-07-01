@@ -24,7 +24,6 @@ public class LearnWordsActivity extends AppCompatActivity {
     AssetManager assetManager;
     MyWords wordsList;
     TextView engWord, polWord, wordsCount;
-    int randomIndex;
     int startIndex = 0;
     String language;
     String wordCountString;
@@ -62,6 +61,33 @@ public class LearnWordsActivity extends AppCompatActivity {
         previousWord.getBackground().setColorFilter(0xe0999999, PorterDuff.Mode.SRC_ATOP);
         previousWord.invalidate();
     }
+
+    /*     GLOW RED WHEN PRESSED EFFECT     */
+
+    public static void buttonEffect(View button, int color) {
+        button.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
+                        v.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+                        v.invalidate();
+                        break;
+                    }
+                    case MotionEvent.ACTION_UP: {
+                        v.getBackground().clearColorFilter();
+                        v.invalidate();
+                        break;
+                    }
+                }
+                return false;
+            }
+        });
+    }
+
+    /*  ------------------*****       FUNCTIONALITY METHODS       *****-------------------         */
+
+
+    /*     ONCLICK FOR BOTTOM TOOLBAR BUTTONS     */
 
     public void onClick(View v) {
         switch (v.getId()) {
@@ -105,30 +131,6 @@ public class LearnWordsActivity extends AppCompatActivity {
 
         }
     }
-
-    public static void buttonEffect(View button, int color) {
-        button.setOnTouchListener(new View.OnTouchListener() {
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN: {
-                        v.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-                        v.invalidate();
-                        break;
-                    }
-                    case MotionEvent.ACTION_UP: {
-                        v.getBackground().clearColorFilter();
-                        v.invalidate();
-                        break;
-                    }
-                }
-                return false;
-            }
-        });
-    }
-
-        /*          ----------*****     FUNCTIONALITY METHODS     *****----------          */
-
-
 
     public void initWordCounter() {
         wordsCount.setTypeface(null, Typeface.BOLD);

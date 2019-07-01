@@ -54,12 +54,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/homeButton"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
         android:background="@android:color/transparent"
         android:drawableTop="@drawable/ic_home_button"
-        android:drawablePadding="-2dp"
+        android:drawablePadding="1dp"
         android:drawableTint="@color/meaningTextColor"
         android:onClick="onBottomButtonClick"
         android:text="Home"
@@ -72,13 +73,20 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/profileButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/iconfinder_icons_user_1564534"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_question_mark"
+        android:drawablePadding="-2dp"
+        android:drawableTint="@color/meaningTextColor"
         android:onClick="onBottomButtonClick"
+        android:text="profile"
+        android:textColor="@color/meaningTextColor"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -86,13 +94,20 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/heartButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/iconfinder_119_111093"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_heart"
+        android:drawablePadding="-2dp"
+        android:drawableTint="@color/meaningTextColor"
+        android:text="Favourites"
+        android:textColor="@color/meaningTextColor"
+        android:textSize="12sp"
         android:onClick="onBottomButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
@@ -101,13 +116,20 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/searchButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/iconfinder_search_322497"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_search"
+        android:drawablePadding="-2dp"
+        android:drawableTint="@color/meaningTextColor"
+        android:text="Search"
+        android:textColor="@color/meaningTextColor"
+        android:textSize="12sp"
         android:onClick="onBottomButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
@@ -116,13 +138,20 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/settingsButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/iconfinder_settings_326699"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_settings"
+        android:drawablePadding="-2dp"
+        android:drawableTint="@color/meaningTextColor"
+        android:text="Settings"
+        android:textColor="@color/meaningTextColor"
+        android:textSize="12sp"
         android:onClick="onBottomButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/bottomToolBar"
@@ -174,103 +203,20 @@
         app:layout_constraintGuide_percent="0.8" />
 
 
-    <!-- Layout that changes accordingly to an active bottom button -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="411dp"
-        android:layout_height="621dp"
-        android:id="@+id/changingLayout"
+    <!-- Changing Fragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomToolBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topToolBar">
 
-
-        <TextView
-            android:id="@+id/Settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Settings"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="invisible"/>
-
-        <TextView
-            android:id="@+id/Favourite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Favourite"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="invisible"/>
-
-        <TextView
-            android:id="@+id/Search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="invisible"/>
-
-        <TextView
-            android:id="@+id/Profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Profile"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="invisible"/>
-
-        <Button
-            android:id="@+id/learnWords"
-            android:layout_width="163dp"
-            android:layout_height="163dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/main_menu_button_start"
-            android:paddingTop="110dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/playAGame"
-            android:layout_width="163dp"
-            android:layout_height="163dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:paddingTop="110dp"
-            android:text="@string/main_menu_button_games"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/learnWords"
-            app:layout_constraintTop_toTopOf="parent" />
+    </FrameLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
