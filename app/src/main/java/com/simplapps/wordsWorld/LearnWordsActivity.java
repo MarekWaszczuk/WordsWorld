@@ -1,4 +1,4 @@
-package com.simplapps.WordWorld;
+package com.simplapps.wordsWorld;
 
 
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
+
+import com.simplapps.wordsWorld.main.MainMenuActivity;
 
 
 public class LearnWordsActivity extends AppCompatActivity {

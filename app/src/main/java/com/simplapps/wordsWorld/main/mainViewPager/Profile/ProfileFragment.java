@@ -1,4 +1,4 @@
-package com.simplapps.WordWorld;
+package com.simplapps.wordsWorld.main.mainViewPager.Profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-public class FavouriteFragment extends Fragment {
+import com.simplapps.wordsWorld.R;
+
+public class ProfileFragment extends Fragment {
 
     ConstraintLayout changingLayout;
 
@@ -22,7 +24,7 @@ public class FavouriteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
-        changingLayout = (ConstraintLayout) inflater.inflate(R.layout.favourite_fragment, container, false);
+        changingLayout = (ConstraintLayout) inflater.inflate(R.layout.profile_fragment, container, false);
         return changingLayout;
     }
 

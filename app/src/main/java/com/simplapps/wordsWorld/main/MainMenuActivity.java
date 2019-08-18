@@ -1,4 +1,4 @@
-package com.simplapps.WordWorld;
+package com.simplapps.wordsWorld.main;
 
 import android.app.SearchManager;
 import android.content.ComponentName;
@@ -24,8 +24,17 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
+import com.simplapps.wordsWorld.main.mainViewPager.Favourite.FavouriteFragment;
+import com.simplapps.wordsWorld.main.mainViewPager.Settings.MySettingsFragment;
+import com.simplapps.wordsWorld.main.mainViewPager.Profile.ProfileFragment;
+import com.simplapps.wordsWorld.R;
+import com.simplapps.wordsWorld.main.mainViewPager.Search.SearchFragment;
+import com.simplapps.wordsWorld.SearchResultsActivity;
+import com.simplapps.wordsWorld.main.mainViewPager.Home.HomeFragment;
+import com.simplapps.wordsWorld.main.mainViewPager.ViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +51,7 @@ public class MainMenuActivity extends AppCompatActivity {
     FrameLayout fragmentContainer;
     TextView tw1, tw2, tw3, tw4;
     Configuration mainConfig;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,10 +76,11 @@ public class MainMenuActivity extends AppCompatActivity {
         bottomButtonColorEffect( 0xe0E71D36, bottomButtons);
         setSupportActionBar(menuBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);             // TITLE DISABLED
-        fragmentContainer = findViewById(R.id.fragment_container);
-        showHomeLayout();
-    }
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
 
+    }
     /*  ------------------*****       UI METHODS       *****-------------------         */
 
     @Override
@@ -105,23 +116,23 @@ public class MainMenuActivity extends AppCompatActivity {
         if(v.isPressed()) {
             switch (v.getId()) {
                 case R.id.settingsButton:
-                    showSettingsLayout();
+                    viewPager.setCurrentItem(4, true);
                     break;
 
                 case R.id.searchButton:
-                    showSearchLayout();
+                    viewPager.setCurrentItem(3, true);
                     break;
 
                 case R.id.heartButton:
-                    showFavouriteLayout();
+                    viewPager.setCurrentItem(2, true);
                     break;
 
                 case R.id.profileButton:
-                    showProfileLayout();
+                    viewPager.setCurrentItem(1, true);
                     break;
 
                 case R.id.homeButton:
-                    showHomeLayout();
+                    viewPager.setCurrentItem(0, true);
                     break;
             }
 
@@ -169,37 +180,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         }
     }
-
-    public void showHomeLayout() {
-        if(findViewById(R.id.fragment_container) != null) {
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right).replace(R.id.fragment_container , new HomeFragment()).commit();
-        }
-    }
-
-    public void showSettingsLayout() {
-        if(findViewById(R.id.fragment_container) != null) {
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right).replace(R.id.fragment_container , new MySettingsFragment()).commit();
-        }
-    }
-
-    public void showProfileLayout() {
-        if(findViewById(R.id.fragment_container) != null) {
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right).replace(R.id.fragment_container , new ProfileFragment()).commit();
-        }
-    }
-
-    public void showSearchLayout() {
-        if(findViewById(R.id.fragment_container) != null) {
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right).replace(R.id.fragment_container , new SearchFragment()).commit();
-        }
-    }
-
-    public void showFavouriteLayout() {
-        if(findViewById(R.id.fragment_container) != null) {
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right).replace(R.id.fragment_container , new FavouriteFragment()).commit();
-        }
-    }
-
     /*          ----------*****     FUNCTIONALITY METHODS     *****----------          */
 
     public void loadSharedPreferences() {

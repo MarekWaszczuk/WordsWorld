@@ -1,4 +1,4 @@
-package com.simplapps.WordWorld;
+package com.simplapps.wordsWorld.main.mainViewPager.Settings;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
+
+import com.simplapps.wordsWorld.R;
 
 import java.util.Locale;
 
