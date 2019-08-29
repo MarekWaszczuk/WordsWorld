@@ -3,11 +3,11 @@ package com.simplapps.wordsWorld.main.mainViewPager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.simplapps.wordsWorld.main.mainViewPager.Favourite.FavouriteFragment
-import com.simplapps.wordsWorld.main.mainViewPager.Home.HomeFragment
-import com.simplapps.wordsWorld.main.mainViewPager.Profile.ProfileFragment
-import com.simplapps.wordsWorld.main.mainViewPager.Search.SearchFragment
-import com.simplapps.wordsWorld.main.mainViewPager.Settings.MySettingsFragment
+import com.simplapps.wordsWorld.main.mainViewPager.favourite.FavouriteFragment
+import com.simplapps.wordsWorld.main.mainViewPager.home.HomeFragment
+import com.simplapps.wordsWorld.main.mainViewPager.profile.ProfileFragment
+import com.simplapps.wordsWorld.main.mainViewPager.search.SearchFragment
+import com.simplapps.wordsWorld.main.mainViewPager.settings.MySettingsFragment
 
 private const val NUM_PAGES = 5
 

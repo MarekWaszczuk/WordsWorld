@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainMenuActivity"
     android:id="@+id/asd">
 
     <!-- **** TopToolbar (could also include it from another xml **** -->
@@ -17,17 +15,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nav_button"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/menu_alt_512" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/navButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/menu_alt_512"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageView"
+            android:id="@+id/appLogo"
             android:contentDescription="App Logo"
             android:layout_width="65dp"
             android:layout_height="60dp"
@@ -35,21 +37,9 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/logopng"
             android:visibility="visible"
-            android:translationX="129dp"/>
-    </androidx.appcompat.widget.Toolbar>
-
-
-    <!-- **** BottomToolbar (could also include it from another xml **** -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/bottomToolBar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorAccent"
-        android:theme="@style/CustomMenuBarStyle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.Toolbar>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintEnd_toStartOf="@id/guideline3"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/homeButton"
@@ -68,9 +58,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/bottomToolBar"
-        app:layout_constraintTop_toTopOf="@+id/bottomToolBar" />
-
+        app:layout_constraintStart_toStartOf="parent" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/profileButton"
         style="?android:attr/borderlessButtonStyle"
@@ -89,8 +77,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/bottomToolBar" />
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/heartButton"
@@ -111,8 +98,7 @@
         android:onClick="onBottomButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/bottomToolBar" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/searchButton"
@@ -133,9 +119,7 @@
         android:onClick="onBottomButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/bottomToolBar" />
-
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/settingsButton"
         style="?android:attr/borderlessButtonStyle"
@@ -154,9 +138,8 @@
         android:textSize="12sp"
         android:onClick="onBottomButtonClick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bottomToolBar"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/bottomToolBar" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
 
     <!-- **** View with the shade put in a FrameLayout **** -->
@@ -202,21 +185,28 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.8" />
 
-
     <!-- Changing Fragment -->
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomToolBar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topToolBar">
 
-    </androidx.viewpager.widget.ViewPager>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
+        <androidx.viewpager.widget.PagerTabStrip
+            android:id="@+id/bottomTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
 
+        </androidx.viewpager.widget.ViewPager>
 
-
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

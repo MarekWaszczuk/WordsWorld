@@ -5,16 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:openDrawer="start"
-    android:id="@+id/drawer_layout">
+    android:id="@+id/drawerLayout">
 
     <include
         layout="@layout/activity_main_menu"
         android:id="@+id/asd"/>
 
-
-
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/navView"
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

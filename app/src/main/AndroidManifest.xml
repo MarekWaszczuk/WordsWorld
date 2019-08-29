@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.simplapps.wordsWorld.main.MainMenuActivity">
+
+            android:name=".main.MainActivity">
+
             <meta-data android:name="android.app.searchable"
                 android:value=".SearchResultsActivity" />
 
@@ -21,11 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name="com.simplapps.wordsWorld.LearnWordsActivity"-->
+<!--            android:parentActivityName="com.simplapps.wordsWorld.main.MainActivity">-->
+<!--        </activity>-->
         <activity
-            android:name="com.simplapps.wordsWorld.LearnWordsActivity"
-            android:parentActivityName="com.simplapps.wordsWorld.main.MainMenuActivity">
-        </activity>
-        <activity
+
             android:name="com.simplapps.wordsWorld.SearchResultsActivity"
             android:theme="@style/DialogNoTitleStyle"
             android:label="sadsadas">

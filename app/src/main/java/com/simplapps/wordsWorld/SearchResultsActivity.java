@@ -28,7 +28,8 @@ public class SearchResultsActivity extends Activity {
         setContentView(R.layout.search_activity);
         assetManager = getAssets();
         myWords = new MyWords(assetManager);
-        wordsData = myWords.getList();
+//        wordsData = myWords.getList();
+
         layout = findViewById(R.id.searchLayout);
         tv = findViewById(R.id.searchResult);
 
@@ -54,9 +55,9 @@ public class SearchResultsActivity extends Activity {
     private void searchForWord(String query) {
         tv.setText("Word not found.");
         for(int k=0; k < wordsData.size(); k++) {
-            if(query.equalsIgnoreCase(wordsData.get(k).getEngWord())) {
-                tv.setText(wordsData.get(k).getEngWord());
-            }
+//            if(query.equalsIgnoreCase(wordsData.get(k).getEngWord())) {
+//                tv.setText(wordsData.get(k).getEngWord());
+//            }
         }
 
 
