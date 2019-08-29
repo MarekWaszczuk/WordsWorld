@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+
             android:name=".main.MainActivity">
+
             <meta-data android:name="android.app.searchable"
                 android:value=".SearchResultsActivity" />
 
@@ -26,6 +28,7 @@
 <!--            android:parentActivityName="com.simplapps.wordsWorld.main.MainActivity">-->
 <!--        </activity>-->
         <activity
+
             android:name="com.simplapps.wordsWorld.SearchResultsActivity"
             android:theme="@style/DialogNoTitleStyle"
             android:label="sadsadas">

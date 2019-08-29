@@ -29,6 +29,7 @@ public class SearchResultsActivity extends Activity {
         assetManager = getAssets();
         myWords = new MyWords(assetManager);
 //        wordsData = myWords.getList();
+
         layout = findViewById(R.id.searchLayout);
         tv = findViewById(R.id.searchResult);
 
