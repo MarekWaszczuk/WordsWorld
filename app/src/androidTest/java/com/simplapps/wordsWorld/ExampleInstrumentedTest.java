@@ -1,4 +1,4 @@
-package com.simplapps.WordWorld;
+package com.simplapps.wordsWorld;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;
