@@ -1,4 +1,4 @@
-package com.simplapps.wordsWorld;
+package com.simplapps.wordsWorld.main.mainViewPager.search;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.simplapps.wordsWorld.R;
+import com.simplapps.wordsWorld.shared.cache.MyWords;
+import com.simplapps.wordsWorld.shared.cache.model.Word;
 
 import java.util.HashMap;
 

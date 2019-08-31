@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_fragment"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <Button
-        android:id="@+id/learnWords"
+        android:id="@+id/learnWordsBtn"
         android:layout_width="163dp"
         android:layout_height="163dp"
         android:layout_marginStart="16dp"
@@ -20,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/playAGame"
+        android:id="@+id/playAGameBtn"
         android:layout_width="163dp"
         android:layout_height="163dp"
         android:layout_marginStart="16dp"
@@ -29,7 +27,7 @@
         android:paddingTop="110dp"
         android:text="@string/main_menu_button_games"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/learnWords"
+        app:layout_constraintStart_toEndOf="@+id/learnWordsBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
 

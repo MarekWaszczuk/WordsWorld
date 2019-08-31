@@ -26,7 +26,7 @@
 <!--            android:parentActivityName="com.simplapps.wordsWorld.main.MainActivity">-->
 <!--        </activity>-->
         <activity
-            android:name="com.simplapps.wordsWorld.SearchResultsActivity"
+            android:name="com.simplapps.wordsWorld.main.mainViewPager.search.SearchResultsActivity"
             android:theme="@style/DialogNoTitleStyle"
             android:label="sadsadas">
             <intent-filter>

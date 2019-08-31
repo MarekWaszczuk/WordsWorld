@@ -15,30 +15,31 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import com.simplapps.wordsWorld.R
 import com.simplapps.wordsWorld.main.mainViewPager.ViewPagerAdapter
-import com.simplapps.wordsWorld.main.mainViewPager.ViewPagerFragment
+import com.simplapps.wordsWorld.shared.navigation.WordsWorldNavigation
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.drawer_layout.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var navigation: WordsWorldNavigation
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.drawer_layout)
 
-        navButton.setOnClickListener( {
-            drawerLayout.openDrawer(GravityCompat.START, true)
-        })
+        navigation = WordsWorldNavigation()
+        navigation.init(this, this.supportFragmentManager)
+
+
+        navButton.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START, true) }
 
         setSupportActionBar(topToolBar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
         viewPager.adapter = adapter
-
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(ViewPagerFragment(), "").commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

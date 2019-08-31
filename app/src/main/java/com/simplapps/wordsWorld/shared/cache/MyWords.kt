@@ -1,6 +1,7 @@
-package com.simplapps.wordsWorld
+package com.simplapps.wordsWorld.shared.cache
 
 import android.content.res.AssetManager
+import com.simplapps.wordsWorld.shared.cache.model.Word
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
