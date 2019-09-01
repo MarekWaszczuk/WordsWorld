@@ -19,4 +19,9 @@
         app:headerLayout="@layout/navigation_drawer_layout"
         app:menu="@menu/menu_main" />
 
+    <FrameLayout
+        android:id="@+id/fullScreenContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -26,4 +26,14 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     override fun getCount(): Int {
         return NUM_PAGES
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when (position) {
+            0 -> "Home"
+            1 -> "Profile"
+            2 -> "Favourite"
+            3 -> "Search"
+            else -> "Settings"
+        }
+    }
 }

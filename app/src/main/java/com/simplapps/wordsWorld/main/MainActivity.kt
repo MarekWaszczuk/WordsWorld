@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import com.simplapps.wordsWorld.R
+import com.simplapps.wordsWorld.main.mainViewPager.MainMenuViewPager
 import com.simplapps.wordsWorld.main.mainViewPager.ViewPagerAdapter
 import com.simplapps.wordsWorld.shared.navigation.WordsWorldNavigation
 import kotlinx.android.synthetic.main.activity_main_menu.*
@@ -23,6 +24,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var navigation: WordsWorldNavigation
+    lateinit var viewPager: MainMenuViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.drawer_layout)
 
         navigation = WordsWorldNavigation()
-        navigation.init(this, this.supportFragmentManager)
-
+        navigation.init(this, this.supportFragmentManager, R.id.fullScreenContainer, R.id.container)
 
         navButton.setOnClickListener { drawerLayout.openDrawer(GravityCompat.START, true) }
 
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val adapter = ViewPagerAdapter(supportFragmentManager)
+        viewPager = MainMenuViewPager(this)
         viewPager.adapter = adapter
     }
 
@@ -66,22 +68,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onBottomButtonClick(v: View) {
-        val x = false
-        if (v.isPressed) {
-            when (v.id) {
-                R.id.settingsButton -> viewPager.setCurrentItem(4, true)
-
-                R.id.searchButton -> viewPager.setCurrentItem(3, true)
-
-                R.id.heartButton -> viewPager.setCurrentItem(2, true)
-
-                R.id.profileButton -> viewPager.setCurrentItem(1, true)
-
-                R.id.homeButton -> viewPager.setCurrentItem(0, true)
-            }
-        }
-    }
     /*          ----------*****     FUNCTIONALITY METHODS     *****----------          */
 
     fun loadSharedPreferences() {
